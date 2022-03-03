@@ -14,16 +14,16 @@ public:
           if(Temp == 0)
           {
             Temp = ( ( (n >> oneIndex) & 1 ) == 0)? 0:1 ;
-            std::cout<<Temp<<"\t";
+            //std::cout<<Temp<<"\t";
             oneIndex ++;
           }else
           {
             n &= ~(1 << oneIndex-1);
-            std::cout<<"the "<< oneIndex <<" bit is one , the number after reseting it is :"<<n <<endl;
+            //std::cout<<"the "<< oneIndex <<" bit is one , the number after reseting it is :"<<n <<endl;
             break;
           }
         }
-        std::cout<<endl;
+        //std::cout<<endl;
         if(n == 0)
         {
           return true;
