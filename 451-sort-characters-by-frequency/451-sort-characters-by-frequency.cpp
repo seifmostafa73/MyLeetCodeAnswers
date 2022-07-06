@@ -20,7 +20,7 @@ public:
 
         for (auto substring : samefrequency)
         {
-            ans += substring.second;
+            ans.append(substring.second);
         }
             reverse(ans.begin(),ans.end());
             return ans;
