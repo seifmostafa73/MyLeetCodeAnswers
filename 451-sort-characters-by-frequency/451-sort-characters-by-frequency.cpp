@@ -13,14 +13,16 @@ public:
         {
             char c = it.first;
             int n = it.second;
-            samefrequency[n] += string(n, c); // this creates an array having all characters with same frequnecy at same index 
+            samefrequency[n] += string(n, c); 
+            // this creates an array having all characters with same frequnecy at same index 
+            // ex : SEEiif -> 2:EEii 1:Sf
         }
 
-        for (auto rit = samefrequency.rbegin(); rit != samefrequency.rend(); ++rit)
+        for (auto substring : samefrequency)
         {
-            ans += rit->second;
+            ans += substring.second;
         }
-
+            reverse(ans.begin(),ans.end());
             return ans;
         
     }
