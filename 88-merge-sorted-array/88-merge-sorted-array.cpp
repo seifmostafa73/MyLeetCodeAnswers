@@ -18,7 +18,6 @@ public:
               nums1[index] = nums1[m];
               m--;
           }
-          cout<<index<<'\t'<<nums1[index] <<endl;
 
                 index --;
         }
@@ -26,17 +25,14 @@ public:
         {
              nums1[index] = nums1[m];
               m--;
-              cout<<index<<'\t'<<nums1[index] <<endl;
               index --;   
         }
          while(index > -1 && n >-1)
         {
              nums1[index] = nums2[n];
               n--;
-              cout<<index<<"\t\t"<<nums1[index] <<endl;
               index --;
             
         }
-        cout<<"\n\n";
     }
 };
