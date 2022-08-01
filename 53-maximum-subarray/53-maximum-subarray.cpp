@@ -16,22 +16,26 @@ public:
             {
                 sum += nums[i];
             }
-            maxSum = (sum>maxSum)? sum:maxSum;
+            
+            if(sum>maxSum)
+            {
+                maxSum = sum;
+            }
         }
         return maxSum;
     }
 };
 
-//burte force O(n^2) C#
+//burte force O(n^2) 
 /*
 public class Solution {
     public int MaxSubArray(int[] nums) {
      int maxSum = int.MinValue;
      int localSum = 0;
         
-        for(int start = 0;start < nums.Length;start++)
+        for(int start = 0;start < nums.size();start++)
         {   localSum = 0;
-            for(int end = start;end < nums.Length;end++)
+            for(int end = start;end < nums.size();end++)
             {
                 localSum+=nums[end];
                 if (localSum > maxSum)
