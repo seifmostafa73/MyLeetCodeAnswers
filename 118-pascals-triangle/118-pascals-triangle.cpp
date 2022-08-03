@@ -4,6 +4,9 @@ public:
         vector<vector<int>> triangle;
         
         int rowelements = 3;
+        
+        int R,C;
+        
         vector<int> row;
         row.assign(1,1);
         triangle.push_back(row);
@@ -14,10 +17,11 @@ public:
         row.assign(2,1);
         triangle.push_back(row);
         row.clear();
-        for(int R = 2;R<numRows;R++)
+        
+        for(R = 2;R<numRows;R++)
         {
             row.push_back(1);
-            for(int C = 1;C < (rowelements-1) ;C++)
+            for(C = 1;C < (rowelements-1) ;C++)
             {
                 row.push_back(triangle[R-1][C]+triangle[R-1][C-1]);
             }
