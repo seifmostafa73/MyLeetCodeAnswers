@@ -2,29 +2,19 @@ class Solution {
 public:
     bool canConstruct(string ransomNote, string magazine) {
         
+        map<char,int> hashtable;
         
-        
-        if(magazine.size() < ransomNote.size())
-            return false;
-        
-        
-        sort(ransomNote.begin() , ransomNote.end());
-        sort(magazine.begin() , magazine.end());
-
-        int i=0,j=0;
-        while(i<ransomNote.size() && j< magazine.size())
-        {
-            if(ransomNote[i] == magazine[j])
-            {
-                i++;
-            }
-            j++;
+        for(int i=0;i<magazine.size();i++){
+            hashtable[magazine[i]]++; //storing the count of each character in magazine
         }
         
-        if (i != ransomNote.size())
-        {
-            return false;
+        for(int i=0;i<ransomNote.size();i++){
+            
+            hashtable[ransomNote[i]]--; //now decrementing that count by one for each time we need this char in the ransomenote
+            
+            if(hashtable[ransomNote[i]] < 0) // if the no of repetation of this char is not enough return false
+                return false;
         }
-        return true;
+        return true;     
     }
 };
