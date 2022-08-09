@@ -5,10 +5,7 @@ public:
         
         
         for(int i =0;i<s.size();i++)
-        {
-            if( nonDuplicate.find(s[i]) == nonDuplicate.end() )
-                nonDuplicate.insert(pair<char,int>(s[i],0) );
-            
+        {          
            nonDuplicate[s[i]] ++;
         }
         
