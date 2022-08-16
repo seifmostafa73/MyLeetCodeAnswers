@@ -15,15 +15,15 @@ public:
         vector<int> preorder;
         if(root == NULL)
             return preorder;
-        addpreordertolist(root,&preorder);
+        addpreordertolist(root,preorder);
         
         return preorder;
     }
-    void addpreordertolist(TreeNode* root , vector<int> * list)
+    void addpreordertolist(TreeNode* root , vector<int> & list)
     {
         if(root == NULL)
             return ;
-        list->push_back(root->val);
+        list.push_back(root->val);
         addpreordertolist(root->left,list);
         addpreordertolist(root->right,list);
     }
